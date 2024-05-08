@@ -1,0 +1,11 @@
+version: '3.7'
+
+Resources:
+  -TargetService:
+    Type: AWS::ECS::Service
+    Properties:
+      TaskDefinition: "arn:aws:ecs:us-east-1:601202050787:task-definition/pensioner-detail-web-service:1"
+      LoadBalancerInfo:
+        ContainerName: "pensioner-detail-web-service"
+        ContainerPort: "8081"
+      PlatformVersion: "LATEST"
